@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-family: "Times New Roman", Times, serif;
+  background-color: black;
+}
+
+.container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  color: aliceblue;
+  /* border: 1px solid red; */
+  perspective: 1000px;
+}
+
+.box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  transform-style: preserve-3d;
+  /* transform: rotateY(150deg); */
+  transition-duration: 0.2s;
+  animation: cube-rotate 5s linear infinite ;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  position: absolute;
+   width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  /* border: 1px solid greenyellow; */
+  opacity: 0.9;
+}
+
+#left {
+  background-color: bisque;
+  right: 125px;
+  transform: rotateY(-90deg);
+}
+
+#bottom{
+  background-color: aquamarine;
+    transform: translateZ(125px);
+}
+
+#right{
+  background-color: aqua;
+    left: 125px;
+    transform: rotateY(90deg);
+}
+
+#top{
+  background-color: blueviolet;
+    bottom: 125px;
+    transform: rotateX(90deg);
+}
+
+#back{
+  background-color: deepskyblue;
+    top: 125px;
+    transform: rotateX(-90deg);
+}
+#front{
+  background-color: darkgrey;
+  transform: translateZ(-125px) rotateY(180deg);
+
+}
+
+@keyframes cube-rotate {
+   0%{
+       transform: rotateX(0deg)  rotateY(0deg)  rotateZ(0deg);
+   } 
+
+   100%{
+       transform: rotateX(360deg)  rotateY(360deg)  rotateZ(360deg);
+   } 
+}
